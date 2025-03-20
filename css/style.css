@@ -64,8 +64,7 @@ body {
   color: #c34a36;
 }
 
-/* .player__controls .fa-pause */
-.player__pause {
+.player__controls .fa.fa-pause {
   color: #fff;
 }
 
