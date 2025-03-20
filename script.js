@@ -6,6 +6,9 @@ const stop = document.getElementById('stop');
 const progress = document.getElementById('progress');
 const timestamp = document.getElementById('timestamp');
 
+// Volume
+const volume = document.getElementById('volume');
+
 // Play & pause video
 const toggleVideoStatus = () => {
   if (video.paused) {
@@ -54,6 +57,11 @@ const stopVideo = () => {
   video.pause();
 };
 
+// Volume update
+const updateVolume = () => {
+  video.volume = volume.value;
+};
+
 // Event listeners
 video.addEventListener('click', toggleVideoStatus);
 video.addEventListener('pause', updatePlayIcon);
@@ -61,7 +69,6 @@ video.addEventListener('play', updatePlayIcon);
 video.addEventListener('timeupdate', updateProgress);
 
 play.addEventListener('click', toggleVideoStatus);
-
 stop.addEventListener('click', stopVideo);
-
 progress.addEventListener('change', setVideoProgress);
+volume.addEventListener('input', updateVolume);

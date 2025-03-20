@@ -43,6 +43,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -5px;
   padding: 10px;
 }
 
@@ -66,6 +67,19 @@ body {
 
 .player__controls .fa.fa-pause {
   color: #fff;
+}
+
+.player__volume--text {
+  margin: 0 10px;
+}
+
+.player__volume {
+  width: 100px;
+  cursor: pointer;
+}
+
+input[type='range'].player__volume {
+  width: 30%;
 }
 
 .player__timestamp {
