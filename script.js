@@ -29,14 +29,15 @@ const updateProgress = () => {
   return true;
 };
 
-// Set Vudeo time to progress
+// Set Video time to progress
 const setVideoProgress = () => {
   return true;
 };
 
 // Stop video
 const stopVideo = () => {
-  return true;
+  video.currentTime = 0;
+  video.pause();
 };
 
 // Event listeners
