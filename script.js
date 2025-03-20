@@ -27,11 +27,25 @@ const updatePlayIcon = () => {
 // Update Progress && Timestamp
 const updateProgress = () => {
   progress.value = (video.currentTime / video.duration) * 100;
+
+  // Get minutes
+  let mins = Math.floor(video.currentTime / 60);
+  if (mins < 0) {
+    mins = '0' + String(mins);
+  }
+
+  // Get seconds
+  let seconds = Math.floor(video.currentTime % 60);
+  if (seconds < 0) {
+    seconds = '0' + String(seconds);
+  }
+
+  timestamp.innerHTML = `${mins}:${seconds}`;
 };
 
 // Set Video time to progress
 const setVideoProgress = () => {
-  return true;
+  video.currentTime = (progress.value * video.duration) / 100;
 };
 
 // Stop video
